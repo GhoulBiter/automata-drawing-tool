@@ -1,5 +1,5 @@
 __pycache__
 
-outputs
+outputs*
 nfa_generation.log
 input.yaml
