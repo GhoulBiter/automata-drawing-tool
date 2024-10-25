@@ -1,0 +1,83 @@
+nfas:
+  - name: "NFA 1"
+    type: "e-nfa"
+    states: ["A", "B", "C", "D", "E"]
+    alphabet: ["0", "1"]
+    transitions:
+      A:
+        0: ["B", "C"]
+      B:
+        1: ["D"]
+      C:
+        0: ["E"]
+      D:
+        ε: ["C", "E"]
+      E:
+        1: ["A"]
+    start_state: "A"
+    final_states: ["D", "E"]
+
+  - name: "NFA 2"
+    type: "e-nfa"
+    states: ["S_0", "S_1", "S_2", "S_3", "S_4"]
+    alphabet: ["0", "1"]
+    transitions:
+      S_0:
+        1: ["S_1", "S_2"]
+      S_1:
+        0: ["S_3"]
+      S_2:
+        0: ["S_4"]
+      S_3:
+        ε: ["S_2", "S_4"]
+      S_4:
+        1: ["S_0"]
+    start_state: "S_0"
+    final_states: ["S_3", "S_4"]
+
+  - name: "NFA 3"
+    type: "e-nfa"
+    states: ["P", "Q", "R", "T"]
+    alphabet: ["a", "b"]
+    transitions:
+      P:
+        a: ["Q"]
+      Q:
+        b: ["R", "T"]
+      R:
+        a: ["T"]
+      T:
+        ε: ["P"]
+    start_state: "P"
+    final_states: ["T"]
+
+  - name: "NFA 4"
+    type: "e-nfa"
+    states: ["X", "Y", "Z", "W"]
+    alphabet: ["0", "1"]
+    transitions:
+      X:
+        0: ["Y"]
+      Y:
+        1: ["Z", "W"]
+      Z:
+        0: ["X", "W"]
+      W:
+        ε: ["Y"]
+        1: ["Z"]
+    start_state: "X"
+    final_states: ["Z"]
+
+  - name: "NFA 5"
+    type: "nfa"
+    states: ["A", "B", "C", "D"]
+    alphabet: ["a", "b"]
+    transitions:
+      A:
+        a: ["B"]
+      B:
+        b: ["C"]
+      C:
+        a: ["D"]
+    start_state: "A"
+    final_states: ["D"]
