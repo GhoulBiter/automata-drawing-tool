@@ -8,7 +8,7 @@ from validators import (
 )
 
 
-class NFAGenerator:
+class NFA_Generator:
     """
     NFAGenerator is responsible for creating and rendering NFAs using Graphviz.
 
